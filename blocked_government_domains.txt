@@ -1,0 +1,61 @@
+# Additional government domain suffixes to block, one per line.
+# Lines starting with # and empty lines are ignored.
+# Note: .gov and *.gov.* patterns are already blocked by code.
+
+# Military
+.mil
+
+# East Asia
+.go.jp
+.go.kr
+
+# Southeast Asia
+.go.th
+.go.id
+
+# Africa (.go.* pattern)
+.go.ke
+.go.tz
+.go.ug
+
+# Central America (.go.* pattern)
+.go.cr
+
+# French-speaking (.gouv.* pattern)
+.gouv.fr
+.gouv.ci
+.gouv.bj
+.gouv.sn
+.gouv.ml
+.gouv.mg
+.gouv.ht
+.gouv.cd
+.gouv.bf
+.gouv.ne
+.gouv.tg
+.gouv.ga
+.gouv.rw
+.gouv.cg
+.gouv.mc
+
+# Spanish-speaking (.gob.* pattern)
+.gob.mx
+.gob.ar
+.gob.pe
+.gob.cl
+.gob.es
+.gob.bo
+.gob.ec
+.gob.gt
+.gob.hn
+.gob.ni
+.gob.pa
+.gob.sv
+.gob.ve
+.gob.do
+.gob.py
+
+# Other country-specific government patterns
+.governo.it
+.gc.ca
+.gub.uy

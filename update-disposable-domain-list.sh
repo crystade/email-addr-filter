@@ -1,0 +1,1 @@
+curl -L "https://raw.githubusercontent.com/disposable-email-domains/disposable-email-domains/refs/heads/main/disposable_email_blocklist.conf" -o blocked_disposable_domains.txt
