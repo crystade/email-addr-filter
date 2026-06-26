@@ -49,7 +49,7 @@ Steps: `Universal normalization → Provider-specific normalization → Universa
 	+ The first character in the local part must be lowercase a-z
 	+ The last character in the local part must not be a special character
 	+ Consecutive special characters in the local part are forbidden, e.g. same `..` or mixed `.+`
-	+ The domain must be eTLD+1 (using https://pkg.go.dev/golang.org/x/net/publicsuffix sourced from https://publicsuffix.org/)
+	+ The domain must be a valid eTLD+1 (using https://pkg.go.dev/golang.org/x/net/publicsuffix sourced from https://publicsuffix.org/)
 	+ Characters allowed in the hostname (after lowercasing) must be a-z, 0-9 and `-` (hyphen)
 	+ The first character in the hostname must not be a hyphen `-`
 	+ The last character in the hostname must not be a hyphen `-`

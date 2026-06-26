@@ -68,6 +68,8 @@ func TestValidateDomain(t *testing.T) {
 		{"invalid char underscore", "my_domain.com", true},
 		{"empty label (double dot)", "my-domain..com", true},
 		{"label ends with hyphen", "my-domain-.com", true},
+		{"invalid TLD com8", "my-domain.com8", true},
+		{"invalid TLD xyz9", "my-domain.xyz9", true},
 
 		// IANA reserved domains
 		{"IANA example.com", "example.com", true},

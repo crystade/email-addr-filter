@@ -74,6 +74,11 @@ func validateDomain(domain string) error {
 		return err
 	}
 
+	// Top-level domain must be a recognized ICANN TLD
+	if err := validateTLD(domain); err != nil {
+		return err
+	}
+
 	// Validate each hostname component
 	labels := strings.Split(domain, ".")
 	for _, label := range labels {
@@ -112,6 +117,20 @@ func validateETLDPlusOne(domain string) error {
 	}
 	if etld1 == "" {
 		return fmt.Errorf("domain %q is not a valid eTLD+1: bare public suffix", domain)
+	}
+	return nil
+}
+
+// validateTLD checks that the rightmost label (top-level domain) of a domain
+// is a recognized ICANN-managed TLD. This prevents domains with completely
+// fabricated TLDs like "com8" from passing validation, as the publicsuffix
+// package's wildcard rule would otherwise treat any unknown TLD as valid.
+func validateTLD(domain string) error {
+	labels := strings.Split(domain, ".")
+	tld := labels[len(labels)-1]
+	_, icann := publicsuffix.PublicSuffix(tld)
+	if !icann {
+		return fmt.Errorf("top-level domain %q is not a recognized ICANN TLD", tld)
 	}
 	return nil
 }
